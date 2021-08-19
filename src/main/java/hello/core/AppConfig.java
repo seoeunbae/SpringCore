@@ -12,19 +12,26 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemberRepository(),
+
     @Bean
     public MemberService memberService() {//키(메소드명)
-        return new MemberServiceImpl(MemberRepository());//요것만바꾸면됨//벨류
+        System.out.println("call AppConfig.memberService");
+        return new MemberServiceImpl(memberRepository());//요것만바꾸면됨//벨류
     }
 
     @Bean
-    public MemoryMemberRepository MemberRepository() {//멤버메모리리포지토리리턴하는메소드
+    public MemoryMemberRepository memberRepository() {//멤버메모리리포지토리리턴하는메소드
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService(){
-        return new OrderServiceImpl(MemberRepository(), DiscountPolicy());//요것만바꾸면됨
+        System.out.println("call AppConfig.orderService");
+        return new OrderServiceImpl(memberRepository(), DiscountPolicy());//요것만바꾸면됨
     }
 
     @Bean
