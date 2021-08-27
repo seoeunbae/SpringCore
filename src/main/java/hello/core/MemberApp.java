@@ -6,7 +6,7 @@ import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
+//Junit을 사용하지 않고 애플리케이션로직으로 테스트하는 곳
 public class MemberApp {
     public static void main(String[] args) {
 //        AppConfig appConfig = new AppConfig();

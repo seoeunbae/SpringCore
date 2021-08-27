@@ -7,7 +7,7 @@ import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
+//테스트하는곳
 public class OrderApp {
     public static void main(String[] args) {
 

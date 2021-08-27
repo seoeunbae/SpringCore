@@ -9,7 +9,7 @@ import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+//여기서 조립한다.(어셈블리어)
 @Configuration
 public class AppConfig {
 
@@ -32,9 +32,10 @@ public class AppConfig {
     public OrderService orderService(){
         System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), DiscountPolicy());//요것만바꾸면됨
+
     }
 
-    @Bean
+//    @Bean
     public RateDiscountPolicy DiscountPolicy() {
         return new RateDiscountPolicy();
     }
