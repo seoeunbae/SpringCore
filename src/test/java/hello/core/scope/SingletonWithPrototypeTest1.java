@@ -36,7 +36,8 @@ public class SingletonWithPrototypeTest1 {
     }
     @Scope("singleton")
     static class ClientBean {
-        private final PrototypeBean prototypeBean;//생성시점에 주입,즉 한번한 생성
+        private final PrototypeBean prototypeBean;//생성시점에 주입,즉 한번만 생성
+
         @Autowired
         public ClientBean(PrototypeBean prototypeBean) {
             this.prototypeBean = prototypeBean;
